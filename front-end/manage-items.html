@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>POS System - Manage Customers</title>
+    <title>POS System - Manage Items</title>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -42,7 +42,7 @@
             </li>
             <li>
                 <a href="manage-customers.html" class="nav-link py-3 border-bottom rounded-0"
-                   title="Manage Customers" data-bs-toggle="tooltip" data-bs-placement="right">
+                   title="Manage Items" data-bs-toggle="tooltip" data-bs-placement="right">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                          class="bi bi-person-bounding-box" viewBox="0 0 16 16">
                         <path
@@ -88,13 +88,13 @@
     <section class="d-flex justify-content-between border-bottom p-2">
         <h2 class="m-0 align-self-center">Manage Items</h2>
         <button id="btn-new-customer" class="btn btn-primary" data-bs-toggle="modal"
-                data-bs-target="#new-customer-modal">New Item</button>
+                data-bs-target="#new-item-modal">New Item</button>
     </section>
     <section class="p-2">
         <input class="form-control text-center" type="text" placeholder="Search Item">
     </section>
     <section class="p-2">
-        <table id="tbl-customers" class="table table-hover table-bordered">
+        <table id="tbl-items" class="table table-hover table-bordered">
             <thead class="table-light">
             <tr>
                 <th class="text-center">Code</th>
@@ -139,37 +139,37 @@
     </section>
 </main>
 <!-- Modal -->
-<div class="modal fade" id="new-customer-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+<div class="modal fade" id="new-item-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
      aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h1 class="modal-title fs-5">Add New Customer</h1>
+                <h1 class="modal-title fs-5">Add New Item</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body text-center">
                 <div class="mb-3">
-                    <label for="txt-id" class="form-label">Item Code</label>
-                    <input type="text" class="form-control text-center" id="txt-id" placeholder="Generated Code"
+                    <label for="txt-code" class="form-label">Item Code</label>
+                    <input type="text" class="form-control text-center" id="txt-code" placeholder="Generated Code"
                            disabled>
                 </div>
                 <div class="mb-3">
-                    <label for="txt-name" class="form-label">Item Description</label>
-                    <input type="text" class="form-control text-center" id="txt-name" placeholder="Eg. Mobile Phones">
+                    <label for="txt-description" class="form-label">Item Description</label>
+                    <input type="text" class="form-control text-center" id="txt-description" placeholder="Eg. Mobile Phones">
                     <div class="invalid-feedback">
                         Item Description can't be empty
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="txt-contact" class="form-label">Unit Price</label>
-                    <input type="text" class="form-control text-center" id="txt-contact" placeholder="Eg. Rs. 300,000">
+                    <label for="txt-unit-price" class="form-label">Unit Price</label>
+                    <input type="text" class="form-control text-center" id="txt-unit-price" placeholder="Eg. Rs. 300,000">
                     <div class="invalid-feedback">
                         Unit Price can't be empty
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="txt-address" class="form-label">Initial Stock</label>
-                    <input type="text" class="form-control text-center" id="txt-address" placeholder="Eg. 26">
+                    <label for="txt-stock" class="form-label">Initial Stock</label>
+                    <input type="text" class="form-control text-center" id="txt-stock" placeholder="Eg. 26">
                     <div class="invalid-feedback">
                         Stock can't be empty
                     </div>
