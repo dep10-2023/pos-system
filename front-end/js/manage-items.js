@@ -75,11 +75,7 @@ modalElm.on('show.bs.modal', () => {
     txtCode.parent().hide();
     setTimeout(() => txtName.trigger('focus'), 500);
 });
-modalElm.on('show.bs.modal', () => {
-    resetForm(true);
-    txtId.parent().hide();
-    setTimeout(() => txtName.trigger('focus'), 500);
-});
+
 
 function showToast(toastType, header, message) {
     const toast = $("#toast .toast");
