@@ -7,19 +7,22 @@ const txtStock = $("#txt-stock");
 const btnSave = $("#btn-save");
 
 // txtStock.css("background-color","red");
-
+tbodyElm.empty();
+function formatCustomerId(id) {
+    return `I${id.toString().padStart(3, '0')}`;
+}
 btnSave.on('click', () => {
     if (!validateData()) {
         return false;
     }
 
     const id = txtCode.val().trim();
-    const name = txtDescription.val().trim();
+    const description = txtDescription.val().trim();
     const contact = txtContact.val().trim();
     const address = txtAddress.val().trim();
 
-    let customer = {
-        name, contact, address
+    let item = {
+        description, description, unitPrice
     };
 
 
@@ -50,7 +53,7 @@ function validateData() {
         valid = invalidate(txtName, "Invalid name");
     }
 
-    return valid;
+    return true;
 }
 
 function invalidate(txt, msg) {
@@ -72,4 +75,29 @@ modalElm.on('show.bs.modal', () => {
     txtCode.parent().hide();
     setTimeout(() => txtName.trigger('focus'), 500);
 });
+modalElm.on('show.bs.modal', () => {
+    resetForm(true);
+    txtId.parent().hide();
+    setTimeout(() => txtName.trigger('focus'), 500);
+});
+
+function showToast(toastType, header, message) {
+    const toast = $("#toast .toast");
+    toast.removeClass("text-bg-success text-bg-warning text-bg-danger");
+    switch (toastType) {
+        case 'success':
+            toast.addClass('text-bg-success');
+            break;
+        case 'warning':
+            toast.addClass('text-bg-warning');
+            break;
+        case 'error':
+            toast.addClass('text-bg-danger');
+            break;
+        default:
+    }
+    $("#toast .toast-header > strong").text(header);
+    $("#toast .toast-body").text(message);
+    toast.toast('show');
+}
 
